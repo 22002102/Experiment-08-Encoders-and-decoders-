@@ -55,42 +55,93 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+1.create module encoder and decoder.
+
+2.Get inputs and outputs for encoders and decoders.
+
+3.perform or operation for encoder and and logic for decoders.
+
+4.perform RTL LOGIC and get waveform.
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: SANJAY S
+RegisterNumber:  212222230132
 */
+```
+ENCODER:
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
 
+DECODER:
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+
+```
 
 
 
 
 ### RTL LOGIC  
 
+Encoder
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/38853c0d-7042-48c7-bcca-0e96189a547a)
 
 
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/5791712d-4bd6-40d8-a1d4-bd152078ce12)
 
 
 
 
 
 ### TIMING DIGRAMS  
+Encoder
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/4220560c-5266-4437-be66-3125c54fada7)
 
 
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/62130ea6-bbb8-4c60-8c2b-fa440ebe5cbe)
 
 
 
 ### TRUTH TABLE 
 
+Encoder
 
 
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/ccd3a5ea-a582-41c3-ae26-367af6183d62)
 
 
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/a3ecb838-4e46-4043-ab49-2f16f2cc1b2a)
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is done.
